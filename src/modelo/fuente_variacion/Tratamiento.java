@@ -9,15 +9,18 @@ package modelo.fuente_variacion;
  *
  * @author carlos
  */
-public class Error {
+public class Tratamiento {
     
-    private byte grados_libertad;
-    private float suma_cuadrados;
-    private float cuadrado_medio;
+private byte grados_libertad;
+private float suma_cuadrados;
+private float cuadrado_medio;
+private float f_calculada;
+private float f_tabulada_05;
+private float f_tabulada_01;
+
+public Tratamiento(){
     
-    public Error(){
-        
-    }
+}
 
     public byte getGrados_libertad() {
         return grados_libertad;
@@ -41,6 +44,30 @@ public class Error {
 
     public void setCuadrado_medio(float cuadrado_medio) {
         this.cuadrado_medio = cuadrado_medio;
+    }
+
+    public float getF_calculada() {
+        return f_calculada;
+    }
+
+    public void setF_calculada(float f_calculada) {
+        this.f_calculada = f_calculada;
+    }
+
+    public float getF_tabulada_05() {
+        return f_tabulada_05;
+    }
+
+    public void setF_tabulada_05(float f_tabulada_05) {
+        this.f_tabulada_05 = f_tabulada_05;
+    }
+
+    public float getF_tabulada_01() {
+        return f_tabulada_01;
+    }
+
+    public void setF_tabulada_01(float f_tabulada_01) {
+        this.f_tabulada_01 = f_tabulada_01;
     }
     
     
