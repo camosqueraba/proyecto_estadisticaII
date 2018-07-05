@@ -14,6 +14,15 @@ import modelo.tablas_datos.TablaDatosDCA;
  */
 public class ControladorDCA {
     
+    public ControladorDCA(byte numero_tratamientos, byte numero_replicas, float tabla_datos[][] ){
+        
+        TablaDatosDCA datos = new TablaDatosDCA(numero_tratamientos, numero_replicas, tabla_datos);
+        
+        datos.factorCorreccion();
+        datos.
+                
+        TablaAnovaDCA tabla_anova_dca = new TablaAnovaDCA(datos);
+    }
     //TablaDatosDCA tabla = new TablaDatosDCA(0, 0);
     //TablaAnovaDCA diseño = new TablaAnovaDCA(0, 0);
     

@@ -5,7 +5,9 @@
  */
 package vista;
 
+import controlador.ControladorDCA;
 import java.util.Scanner;
+import modelo.tablas_datos.TablaDatosDCA;
 
 /**
  *
@@ -39,9 +41,13 @@ public class Inicio {
                         
                         System.out.println("Digite el valor del tratamiento "+(x+1)+" en la replica "+(y+1));
                         float valor = sc.nextFloat();
-                        
+                        tabladatos[tratamientos][replicas] = valor;
                     }
                 }
+                ControladorDCA controlador = new ControladorDCA(tratamientos, replicas, tabladatos);
+                //TablaDatosDCA tabla = new TablaDatosDCA(tratamientos, replicas, tabladatos);
+                
+            break;
         }
     }
     

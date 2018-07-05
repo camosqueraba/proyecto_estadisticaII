@@ -22,7 +22,7 @@ public class Total {
         return grados_libertad;
     }
 
-    private void setGrados_libertad(byte grados_libertad) {
+    public void setGrados_libertad(byte grados_libertad) {
         this.grados_libertad = grados_libertad;
     }
 
@@ -30,9 +30,11 @@ public class Total {
         return suma_cuadrados;
     }
 
-    private void setSuma_cuadrados(float suma_cuadrados) {
+    public void setSuma_cuadrados(float suma_cuadrados) {
         this.suma_cuadrados = suma_cuadrados;
     }
+
+    
     
     
 }
