@@ -53,7 +53,8 @@ public class Inicio {
                 }
                 ControladorDCA controlador = new ControladorDCA(tratamientos, replicas, tabladatos);
                 //TablaDatosDCA tabla = new TablaDatosDCA(tratamientos, replicas, tabladatos);
-                System.out.println("grados liberta tratamiento "+ controlador.datosTratamiento().getGrados_libertad());
+                System.out.println("grados libertad tratamiento "+ controlador.datosTratamiento().getGrados_libertad());
+                System.out.println("suma cuadrados tratamiento "+ controlador.datosTratamiento().getSuma_cuadrados());
             break;
         }
     }

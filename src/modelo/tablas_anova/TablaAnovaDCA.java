@@ -51,10 +51,10 @@ public class TablaAnovaDCA {
         
         float factor_correccion = tabla_datos_dca.factorCorreccion();
         float suma_cuadrados_unidades_experimentales = tabla_datos_dca.sumaCuadradosUnidadesExperimentales();
-        float suma_tartamientos_cuadrado = tabla_datos_dca.sumatoriaTratamientosCuadrado();
+        float suma_tratamientos_cuadrado = tabla_datos_dca.sumatoriaTratamientosCuadrado();
         
         total_dca.setSuma_cuadrados(suma_cuadrados_unidades_experimentales-factor_correccion);
-        tratamiento_dca.setSuma_cuadrados(suma_tartamientos_cuadrado-factor_correccion);
+        tratamiento_dca.setSuma_cuadrados(suma_tratamientos_cuadrado-factor_correccion);
         error_dca.setSuma_cuadrados(total_dca.getSuma_cuadrados()-tratamiento_dca.getSuma_cuadrados());
         
     }

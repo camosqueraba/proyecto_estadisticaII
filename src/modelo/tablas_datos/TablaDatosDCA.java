@@ -54,8 +54,8 @@ public class TablaDatosDCA {
         
         float y = 0;
         
-        for(byte tratamiento=0; tratamiento<=numero_tratamientos; tratamiento++){
-            for(byte replica=0; replica<=numero_replicas; replica++){
+        for(byte tratamiento=0; tratamiento<numero_tratamientos; tratamiento++){
+            for(byte replica=0; replica<numero_replicas; replica++){
                
                 y += datos_tabla[tratamiento][replica]; 
             }
@@ -82,7 +82,7 @@ public class TablaDatosDCA {
     public float factorCorreccion(){
         
         float factor_correccion = 0;
-        float suma_unidades = this.sumaCuadradosUnidadesExperimentales();
+        float suma_unidades = this.sumaUnidadesExperimentales();
         
         factor_correccion =(float)( pow(suma_unidades,2)/this.unidades_experimentales);
         
