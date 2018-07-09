@@ -30,23 +30,30 @@ public class Inicio {
             case 1:
                 
                 System.out.println("digite numero de tratamientos");
+                //byte tratamientos = 2;
                 byte tratamientos = sc.nextByte();
                 System.out.println("digite numero de replicas");
+               // byte replicas = 3;
                 byte replicas = sc.nextByte();
                 
+                
                 float tabladatos[][] = new float[tratamientos][replicas];
+                //float tabladatos[][] = new float[3][3];
                 
                 for(byte x=0; x<tratamientos; x++){
                     for(byte y=0; y<replicas; y++){
                         
                         System.out.println("Digite el valor del tratamiento "+(x+1)+" en la replica "+(y+1));
                         float valor = sc.nextFloat();
-                        tabladatos[tratamientos][replicas] = valor;
+                        //System.out.println("valor "+valor);
+                        //System.out.println("Tabla datos 00 "+tabladatos[0][0]);
+                        //tabladatos[tratamientos][replicas] = valor;
+                        tabladatos[x][y] = valor;
                     }
                 }
                 ControladorDCA controlador = new ControladorDCA(tratamientos, replicas, tabladatos);
                 //TablaDatosDCA tabla = new TablaDatosDCA(tratamientos, replicas, tabladatos);
-                
+                System.out.println("grados liberta tratamiento "+ controlador.datosTratamiento().getGrados_libertad());
             break;
         }
     }

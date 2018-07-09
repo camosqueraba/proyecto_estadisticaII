@@ -68,11 +68,11 @@ public class TablaDatosDCA {
         
         float cuadrados = 0; 
         
-        for(byte tratamiento=0; tratamiento<=numero_tratamientos; tratamiento++){
-            for(byte replica=0; replica<=numero_replicas; replica++){
+        for(byte tratamiento=0; tratamiento<numero_tratamientos; tratamiento++){
+            for(byte replica=0; replica<numero_replicas; replica++){
                
                 
-                cuadrados += datos_tabla[tratamiento][replica]*datos_tabla[tratamiento][replica]; 
+                cuadrados += pow(datos_tabla[tratamiento][replica],2); 
                 
             }
         }
@@ -87,6 +87,24 @@ public class TablaDatosDCA {
         factor_correccion =(float)( pow(suma_unidades,2)/this.unidades_experimentales);
         
         return factor_correccion;
+    }
+    
+    public float sumatoriaTratamientosCuadrado(){
+        
+        float y = 0;
+        float auxtratamiento = 0;
+        float suma_tratamiento = 0;
+        
+        for(byte tratamiento=0; tratamiento<numero_tratamientos; tratamiento++){
+            for(byte replica=0; replica<numero_replicas; replica++){
+               
+                y += datos_tabla[tratamiento][replica]; 
+            }
+            suma_tratamiento = (float)pow(y,2);
+            auxtratamiento += suma_tratamiento/numero_replicas;  
+            y = 0;
+        }
+        return auxtratamiento;
     }
     
     
