@@ -64,7 +64,11 @@ public class TablaAnovaDCA {
         tratamiento_dca.setCuadrado_medio(tratamiento_dca.getSuma_cuadrados()/tratamiento_dca.getGrados_libertad());
         error_dca.setCuadrado_medio(error_dca.getSuma_cuadrados()/error_dca.getGrados_libertad());
     }
-
+    
+    public void fCalculada(){
+        
+        tratamiento_dca.setF_calculada(tratamiento_dca.getCuadrado_medio()/error_dca.getCuadrado_medio());
+    }
     public Tratamiento getTratamiento_dca() {
         return tratamiento_dca;
     }

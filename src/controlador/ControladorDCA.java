@@ -6,6 +6,8 @@
 package controlador;
 
 import modelo.fuente_variacion.Tratamiento;
+import modelo.fuente_variacion.Error;
+import modelo.fuente_variacion.Total;
 import modelo.tablas_anova.TablaAnovaDCA;
 import modelo.tablas_datos.TablaDatosDCA;
 
@@ -25,6 +27,7 @@ public class ControladorDCA {
         tabla_anova_dca.gradosLibertad();
         tabla_anova_dca.sumaCuadrados();
         tabla_anova_dca.cuadradoMedio();
+        tabla_anova_dca.fCalculada();
     }
     //TablaDatosDCA tabla = new TablaDatosDCA(0, 0);
     //TablaAnovaDCA diseño = new TablaAnovaDCA(0, 0);
@@ -33,4 +36,12 @@ public class ControladorDCA {
         return tabla_anova_dca.getTratamiento_dca();
     }
     
+    public Total datosTotal(){
+        
+        return tabla_anova_dca.getTotal_dca();
+    }
+    
+    public Error datosError(){
+        return tabla_anova_dca.getError_dca();
+    }
 }
