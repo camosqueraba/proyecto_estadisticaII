@@ -22,6 +22,7 @@ public class Inicio {
         System.out.println("Selecione el diseño");
         System.out.println("1: DCA");
         System.out.println("2: DBA");
+        System.out.println("3: DCL");
         
         
         byte  opcion = sc.nextByte();
@@ -69,8 +70,6 @@ public class Inicio {
                 System.out.println("\n\n");
                 System.out.println("Grados libertad Total "+controlador.datosTotal().getGrados_libertad());
                 System.out.println("Suma cuadrados total "+controlador.datosTotal().getSuma_cuadrados());
-                
-                
             break;
             
             case 2:
@@ -97,6 +96,13 @@ public class Inicio {
                 System.out.println("\n\n");
                 System.out.println("Grados libertad Total "+controlador_dba.datosTotal().getGrados_libertad());
                 System.out.println("Suma cuadrados total "+controlador_dba.datosTotal().getSuma_cuadrados());
+            break; 
+            
+            case 3:
+                byte tratamientos_dcl = 6;
+                float valor_tratamientos [] = {40.0f, 42.0f, 40.7f, 32.7f, 43.5f, 34.6f };
+                float tabla_datos_dcl [][] = {{35, 40, 40.7, 42, 32.7, 34.6 },{42.3 , 43.5, 42.7, 42.6, 41.6, 30.6},{41, 39.5, 38.8}  }
+                
         }
     }
     
