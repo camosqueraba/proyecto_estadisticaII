@@ -18,6 +18,8 @@ import modelo.tablas_datos.TablaDatosDCA;
 public class ControladorDCA {
     
     private TablaAnovaDCA tabla_anova_dca;
+
+    
     
     public ControladorDCA(byte numero_tratamientos, byte numero_replicas, float tabla_datos[][] ){
         
@@ -43,5 +45,9 @@ public class ControladorDCA {
     
     public Error datosError(){
         return tabla_anova_dca.getError_dca();
+    }
+    
+    public TablaAnovaDCA getTabla_anova_dca() {
+        return tabla_anova_dca;
     }
 }

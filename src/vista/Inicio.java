@@ -5,6 +5,7 @@
  */
 package vista;
 
+import controlador.ControladorDBA;
 import controlador.ControladorDCA;
 import java.util.Scanner;
 import modelo.tablas_datos.TablaDatosDCA;
@@ -30,7 +31,7 @@ public class Inicio {
             case 1:
                 
                 System.out.println("digite numero de tratamientos");
-                byte tratamientos = 9 ;
+                byte tratamientos =  3;
                 //byte tratamientos = sc.nextByte();
                 System.out.println("digite numero de replicas");
                 byte replicas = 4;
@@ -40,8 +41,8 @@ public class Inicio {
                 //float tabladatos[][] = new float[tratamientos][replicas];
                 //float tabladatos[][] = new float[3][4];
                 
-               float tabladatos[][] = {{34,35,37,36},{72,109,153,86},{76,80,47,42},{157,218,60,224},{59,113,63,92},{69,149,66,135},{55,140,35,92},{235,123,71,142},{76,139,180,152}};
-               
+               float tabladatos[][] = {{13,12,13,11},{11,14,13,12},{9,8,11,9}};
+               //float tabladatos[][] = {{34,35,37,36},{72,109,153,86},{76,80,47,42},{157,218,60,224},{59,113,63,92},{69,149,66,135},{55,140,35,92},{235,123,71,142},{76,139,180,152}};
                 /*for(byte x=0; x<tratamientos; x++){
                     for(byte y=0; y<replicas; y++){
                         
@@ -55,6 +56,7 @@ public class Inicio {
                 }*/
                 ControladorDCA controlador = new ControladorDCA(tratamientos, replicas, tabladatos);
                 //TablaDatosDCA tabla = new TablaDatosDCA(tratamientos, replicas, tabladatos);
+                System.out.println("Factor correccion "+ controlador.getTabla_anova_dca().getTabla_datos_dca().factorCorreccion());
                 System.out.println("\n\n");
                 System.out.println("grados libertad tratamiento "+ controlador.datosTratamiento().getGrados_libertad());
                 System.out.println("suma cuadrados tratamiento "+ controlador.datosTratamiento().getSuma_cuadrados());
@@ -70,6 +72,31 @@ public class Inicio {
                 
                 
             break;
+            
+            case 2:
+                byte tratamientos_dba =  6;
+                byte bloques_dba = 4;
+                float tabladatos_dba[][] = {{12,17,20,10},{13,20,23,19},{14,20,29,22},{10,18,26,22},{12,17,21,12},{8,9,14,13}};
+                ControladorDBA controlador_dba = new ControladorDBA(tratamientos_dba, bloques_dba, tabladatos_dba);
+                
+                System.out.println("Factor correccion "+ controlador_dba.getTabla_anova_dba().getTabla_datos_dba().factorCorreccion());
+                System.out.println("\n\n");
+                System.out.println("grados libertad bloque "+ controlador_dba.datosBloque().getGrados_libertad());
+                System.out.println("suma cuadrados bloque "+ controlador_dba.datosBloque().getSuma_cuadrados());
+                System.out.println("cuadrado medio bloque "+ controlador_dba.datosBloque().getCuadrado_medio());
+                System.out.println("F Calculada bloque "+ controlador_dba.datosBloque().getF_calculada());
+                System.out.println("\n\n");
+                System.out.println("grados libertad tratamiento "+ controlador_dba.datosTratamiento().getGrados_libertad());
+                System.out.println("suma cuadrados tratamiento "+ controlador_dba.datosTratamiento().getSuma_cuadrados());
+                System.out.println("Cuadrado medio tratamiento "+ controlador_dba.datosTratamiento().getCuadrado_medio());
+                System.out.println("F Calculada tratamiento "+ controlador_dba.datosTratamiento().getF_calculada());
+                System.out.println("\n\n");
+                System.out.println("grados libertad error "+ controlador_dba.datosError().getGrados_libertad());
+                System.out.println("Suma Cuadrados error "+ controlador_dba.datosError().getSuma_cuadrados());
+                System.out.println("Cuadrado medio error "+ controlador_dba.datosError().getCuadrado_medio());
+                System.out.println("\n\n");
+                System.out.println("Grados libertad Total "+controlador_dba.datosTotal().getGrados_libertad());
+                System.out.println("Suma cuadrados total "+controlador_dba.datosTotal().getSuma_cuadrados());
         }
     }
     

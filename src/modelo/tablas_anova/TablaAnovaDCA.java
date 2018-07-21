@@ -81,6 +81,8 @@ public class TablaAnovaDCA {
         return total_dca;
     }
     
-    
+     public TablaDatosDCA getTabla_datos_dca() {
+        return tabla_datos_dca;
+    }
     
 }
