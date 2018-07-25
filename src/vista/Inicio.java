@@ -105,6 +105,31 @@ public class Inicio {
                 float valor_tratamientos [] = {40.0f, 42.0f, 40.7f, 32.7f, 43.5f, 34.6f };
                 double [][][] tabla_datos_dcl  = {{{35,4},{ 40,0},{40.7,2},{ 42,1f},{32.7,3},{34.6,5}},{{42.3,3} ,{43.5,4},{ 42.7,0}, {42.6,5},{41.6,1},{ 30.6,2}},{{41,5},{39.5,2},{39.1,3},{ 38.8,4},{42.4,0},{31.1,1}},{{32.9,2},{34.8,3},{43.7,1},{43.3,0},{43.5,5},{35.5,4}},{{38.2,0},{43.8,1},{44.7,5},{37,2},{40.9,4},{37.1,3}},{{35,1},{41.7,5},{43.2,4},{39.1,3},{37.6,2},{27.5,0}}};
                 ControladorDCL controlador_dcl = new ControladorDCL(tratamientos_dcl, valor_tratamientos, tabla_datos_dcl);
+                
+                System.out.println("Factor correccion "+ controlador_dcl.getTabla_anova_dcl().getTabla_datos_dcl().factorCorreccion());
+                System.out.println("\n\n");
+                System.out.println("grados libertad bloque "+ controlador_dcl.datosHilera().getGrados_libertad());
+                System.out.println("suma cuadrados bloque "+ controlador_dcl.datosHilera().getSuma_cuadrados());
+                System.out.println("cuadrado medio bloque "+ controlador_dcl.datosHilera().getCuadrado_medio());
+                System.out.println("F Calculada bloque "+ controlador_dcl.datosHilera().getF_calculada());
+                System.out.println("\n\n");
+               
+                System.out.println("grados libertad bloque "+ controlador_dcl.datosColumna().getGrados_libertad());
+                System.out.println("suma cuadrados bloque "+ controlador_dcl.datosColumna().getSuma_cuadrados());
+                System.out.println("cuadrado medio bloque "+ controlador_dcl.datosColumna().getCuadrado_medio());
+                System.out.println("F Calculada bloque "+ controlador_dcl.datosColumna().getF_calculada());
+                 System.out.println("\n\n");
+                System.out.println("grados libertad tratamiento "+ controlador_dcl.datosTratamiento().getGrados_libertad());
+                System.out.println("suma cuadrados tratamiento "+ controlador_dcl.datosTratamiento().getSuma_cuadrados());
+                System.out.println("Cuadrado medio tratamiento "+ controlador_dcl.datosTratamiento().getCuadrado_medio());
+                System.out.println("F Calculada tratamiento "+ controlador_dcl.datosTratamiento().getF_calculada());
+                System.out.println("\n\n");
+                System.out.println("grados libertad error "+ controlador_dcl.datosError().getGrados_libertad());
+                System.out.println("Suma Cuadrados error "+ controlador_dcl.datosError().getSuma_cuadrados());
+                System.out.println("Cuadrado medio error "+ controlador_dcl.datosError().getCuadrado_medio());
+                System.out.println("\n\n");
+                System.out.println("Grados libertad Total "+controlador_dcl.datosTotal().getGrados_libertad());
+                System.out.println("Suma cuadrados total "+controlador_dcl.datosTotal().getSuma_cuadrados());
                 break;
         }
     }

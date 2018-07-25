@@ -103,5 +103,9 @@ public class TablaAnovaDCL {
         return total_dcl;
     }
     
+    public TablaDatosDCL getTabla_datos_dcl() {
+        return tabla_datos_dcl;
+    }
+    
     
 }

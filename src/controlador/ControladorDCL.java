@@ -59,4 +59,8 @@ public class ControladorDCL {
         return tabla_anova_dcl.getError_dcl();
     }
     
+    public TablaAnovaDCL getTabla_anova_dcl() {
+        return tabla_anova_dcl;
+    }
+    
 }
