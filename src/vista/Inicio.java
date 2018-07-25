@@ -7,6 +7,7 @@ package vista;
 
 import controlador.ControladorDBA;
 import controlador.ControladorDCA;
+import controlador.ControladorDCL;
 import java.util.Scanner;
 import modelo.tablas_datos.TablaDatosDCA;
 
@@ -16,6 +17,7 @@ import modelo.tablas_datos.TablaDatosDCA;
  */
 public class Inicio {
     
+    @SuppressWarnings("empty-statement")
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
@@ -70,7 +72,7 @@ public class Inicio {
                 System.out.println("\n\n");
                 System.out.println("Grados libertad Total "+controlador.datosTotal().getGrados_libertad());
                 System.out.println("Suma cuadrados total "+controlador.datosTotal().getSuma_cuadrados());
-            break;
+                break;
             
             case 2:
                 byte tratamientos_dba =  6;
@@ -96,14 +98,14 @@ public class Inicio {
                 System.out.println("\n\n");
                 System.out.println("Grados libertad Total "+controlador_dba.datosTotal().getGrados_libertad());
                 System.out.println("Suma cuadrados total "+controlador_dba.datosTotal().getSuma_cuadrados());
-            break; 
+                break; 
             
             case 3:
                 byte tratamientos_dcl = 6;
                 float valor_tratamientos [] = {40.0f, 42.0f, 40.7f, 32.7f, 43.5f, 34.6f };
-                float tabla_datos_dcl [][] = {{35, 40, 40.7, 42, 32.7, 34.6 },{42.3 , 43.5, 42.7, 42.6, 41.6, 30.6},{41, 39.5, 38.8}  }
-                
+                double [][][] tabla_datos_dcl  = {{{35,4},{ 40,0},{40.7,2},{ 42,1f},{32.7,3},{34.6,5}},{{42.3,3} ,{43.5,4},{ 42.7,0}, {42.6,5},{41.6,1},{ 30.6,2}},{{41,5},{39.5,2},{39.1,3},{ 38.8,4},{42.4,0},{31.1,1}},{{32.9,2},{34.8,3},{43.7,1},{43.3,0},{43.5,5},{35.5,4}},{{38.2,0},{43.8,1},{44.7,5},{37,2},{40.9,4},{37.1,3}},{{35,1},{41.7,5},{43.2,4},{39.1,3},{37.6,2},{27.5,0}}};
+                ControladorDCL controlador_dcl = new ControladorDCL(tratamientos_dcl, valor_tratamientos, tabla_datos_dcl);
+                break;
         }
     }
-    
 }
