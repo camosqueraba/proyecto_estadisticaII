@@ -21,7 +21,7 @@ public class ControladorDCL {
     
     private TablaAnovaDCL tabla_anova_dcl;
     
-    public ControladorDCL(byte numero_tratamientos, float valor_tratamientos[], double tabla_datos[][][]){
+    public ControladorDCL(byte numero_tratamientos, float valor_tratamientos[], float tabla_datos[][][]){
         
         TablaDatosDCL datos = new TablaDatosDCL(numero_tratamientos, valor_tratamientos, tabla_datos);
         

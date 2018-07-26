@@ -56,10 +56,10 @@ public class TablaAnovaDCL {
         
         float factor_correcion = tabla_datos_dcl.factorCorreccion();
         
-        hilera_dcl.setSuma_cuadrados(tabla_datos_dcl.sumatoriaHilerasCuadrado() - factor_correcion);
-        columna_dcl.setSuma_cuadrados(tabla_datos_dcl.sumatoriaColumnasCuadrado() - factor_correcion);
-        tratamiento_dcl.setSuma_cuadrados(tabla_datos_dcl.sumatoriaTratamientosCuadrado() - factor_correcion);
-        total_dcl.setSuma_cuadrados(tabla_datos_dcl.sumaCuadradosUnidadesExperimentales() - factor_correcion);
+        hilera_dcl.setSuma_cuadrados((float) (tabla_datos_dcl.sumatoriaHilerasCuadrado() - factor_correcion));
+        columna_dcl.setSuma_cuadrados((float) (tabla_datos_dcl.sumatoriaColumnasCuadrado() - factor_correcion));
+        tratamiento_dcl.setSuma_cuadrados((float) (tabla_datos_dcl.sumatoriaTratamientosCuadrado() - factor_correcion));
+        total_dcl.setSuma_cuadrados((float) (tabla_datos_dcl.sumaCuadradosUnidadesExperimentales() - factor_correcion));
         error_dcl.setSuma_cuadrados(total_dcl.getSuma_cuadrados() - (hilera_dcl.getSuma_cuadrados() + columna_dcl.getSuma_cuadrados() + tratamiento_dcl.getSuma_cuadrados() ));
     }
     

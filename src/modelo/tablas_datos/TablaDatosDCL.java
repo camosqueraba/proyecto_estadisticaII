@@ -18,10 +18,10 @@ public class TablaDatosDCL {
     private final byte numero_columnas;
     private final byte unidades_experimentales;
     private final float valor_tratamientos[];
-    private final double datos_tabla[][][];
+    private final float datos_tabla[][][];
     
     
-    public TablaDatosDCL(byte numero_tratamientos, float[] valor_tratamientos, double[][][] datos_tabla) {
+    public TablaDatosDCL(byte numero_tratamientos, float[] valor_tratamientos, float[][][] datos_tabla) {
         
         this.numero_tratamientos = numero_tratamientos;
         this.numero_hileras = numero_tratamientos;
@@ -71,7 +71,7 @@ public class TablaDatosDCL {
         float factor_correccion = 0;
         float suma_unidades = this.sumaUnidadesExperimentales();
         
-        factor_correccion =(float)( pow(suma_unidades,2)/this.unidades_experimentales);
+        factor_correccion =(float) ( pow(suma_unidades,2)/this.unidades_experimentales);
         
         return factor_correccion;
     }
@@ -94,6 +94,7 @@ public class TablaDatosDCL {
     public float sumatoriaTratamientosCuadrado(){
         
         float sumatoria_cuadrados = 0;
+        float sumatoria_tratamientos = 0;
         byte valor = 0;
          
         for(byte tratamiento = 0; tratamiento<numero_tratamientos; tratamiento++){
@@ -101,10 +102,12 @@ public class TablaDatosDCL {
                 for(byte columna=0; columna<numero_columnas; columna++){
                     if (tratamiento == (byte)(datos_tabla[hilera][columna][1])) {
                
-                        sumatoria_cuadrados = (float) pow((datos_tabla[hilera][columna][valor]),2);
+                        sumatoria_tratamientos += (float) datos_tabla[hilera][columna][valor];
                     }
                 }
            }
+            sumatoria_cuadrados += pow(sumatoria_tratamientos,2);
+            sumatoria_tratamientos = 0;
         }
            return sumatoria_cuadrados/numero_tratamientos; 
     }
