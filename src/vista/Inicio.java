@@ -5,6 +5,7 @@
  */
 package vista;
 
+
 import controlador.ControladorDBA;
 import controlador.ControladorDCA;
 import controlador.ControladorDCL;
@@ -34,7 +35,7 @@ public class Inicio {
             case 1:
                 
                 System.out.println("digite numero de tratamientos");
-                byte tratamientos =  3;
+                byte tratamientos =  6;
                 //byte tratamientos = sc.nextByte();
                 System.out.println("digite numero de replicas");
                 byte replicas = 4;
@@ -44,7 +45,24 @@ public class Inicio {
                 //float tabladatos[][] = new float[tratamientos][replicas];
                 //float tabladatos[][] = new float[3][4];
                 
-               float tabladatos[][] = {{13,12,13,11},{11,14,13,12},{9,8,11,9}};
+               double tabladatos[][] = { {0.95,1.06,1.96,1.10},
+                                        {0.33,-1.46,0.20,0.25},
+                                        {-2.15,1.70,0.48,1.00},
+                                        {-1.20,0.62,1.50,-0.80},
+                                        {1.80,0.88,0.20,1.10},
+                                        {-1.05,-0.65,0.80,-1.00}
+                                      };
+                
+                /*double tabladatos[][] ={ {34,35,37,36},
+                                         {72,109,153,86},
+                                         {76,80,47,47},
+                                         {157,218,60,224},
+                                         {59,113,63,92},
+                                         {69,149,66,135},
+                                         {55,140,35,92},
+                                         {235,123,71,142},
+                                         {76,139,180,152}
+                                        };*/
                //float tabladatos[][] = {{34,35,37,36},{72,109,153,86},{76,80,47,42},{157,218,60,224},{59,113,63,92},{69,149,66,135},{55,140,35,92},{235,123,71,142},{76,139,180,152}};
                 /*for(byte x=0; x<tratamientos; x++){
                     for(byte y=0; y<replicas; y++){
@@ -109,11 +127,19 @@ public class Inicio {
                                                   {{32.9,2},{34.8,3},{43.7,1},{43.3,0},{43.5,5},{35.5,4}},
                                                   {{38.2,0},{43.8,1},{44.7,5},{37,2},{40.9,4},{37.1,3}},
                                                   {{35,1},{41.7,5},{43.2,4},{39.2,3},{37.6,2},{27.5,0}}};*/
-                float tabla_datos_dcl [][][]= {{{6,0},{8,2},{5,1},{5,3} },
+                
+                /*float tabla_datos_dcl [][][]= {{{6,0},{8,2},{5,1},{5,3} },
                                          {{7,1},{7,3},{6,0},{4,2} },
                                          {{6,2},{8,1},{5,3},{4,0} },
                                          {{5,3},{9,0},{4,2},{3,1} }
+                                        };*/
+                
+                float tabla_datos_dcl [][][]= {{{45,0},{50,1},{43,2},{35,3} },
+                                         {{29,3},{53,2},{41,1},{63,0} },
+                                         {{37,1},{41,3},{41,0},{63,2} },
+                                         {{38,2},{40,0},{35,3},{41,1} }
                                         };
+                
                 ControladorDCL controlador_dcl = new ControladorDCL(tratamientos_dcl, valor_tratamientos, tabla_datos_dcl);
                 
                 System.out.println("Factor correccion "+ controlador_dcl.getTabla_anova_dcl().getTabla_datos_dcl().factorCorreccion());

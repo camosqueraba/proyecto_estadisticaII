@@ -44,7 +44,7 @@ public class TablaDatosDBA {
     
     
     
-    public float getDatoTabla(byte tratamiento, byte replica){
+    public double getDatoTabla(byte tratamiento, byte replica){
         
         return datos_tabla[tratamiento][replica];
         

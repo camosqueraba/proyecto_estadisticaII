@@ -16,9 +16,9 @@ public class TablaDatosDCA {
     private final byte numero_tratamientos;
     private final byte numero_replicas;
     private final byte unidades_experimentales;
-    private final float datos_tabla[][];
+    private final double datos_tabla[][];
     
-    public TablaDatosDCA(byte numero_tratamientos, byte numero_replicas, float tabladatos[][] ){
+    public TablaDatosDCA(byte numero_tratamientos, byte numero_replicas, double tabladatos[][] ){
         
         this.numero_tratamientos = numero_tratamientos;
         this.numero_replicas = numero_replicas;
@@ -43,7 +43,7 @@ public class TablaDatosDCA {
     
     
     
-    public float getDatoTabla(byte tratamiento, byte replica){
+    public double getDatoTabla(byte tratamiento, byte replica){
         
         return datos_tabla[tratamiento][replica];
         

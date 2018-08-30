@@ -21,7 +21,7 @@ public class ControladorDCA {
 
     
     
-    public ControladorDCA(byte numero_tratamientos, byte numero_replicas, float tabla_datos[][] ){
+    public ControladorDCA(byte numero_tratamientos, byte numero_replicas, double tabla_datos[][] ){
         
         TablaDatosDCA datos = new TablaDatosDCA(numero_tratamientos, numero_replicas, tabla_datos);
         tabla_anova_dca = new TablaAnovaDCA(datos);
